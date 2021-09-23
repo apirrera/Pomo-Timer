@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {} from "react";
 
 function ProgressSection({
   session,
@@ -6,7 +6,7 @@ function ProgressSection({
   breakDuration,
   minutesToDuration,
   secondsToDuration,
-  isTimerRunning,
+  TimerRunning,
   showLabel,
 }) {
   const progressWidth =
@@ -16,11 +16,6 @@ function ProgressSection({
       : parseInt(breakDuration * 60 - session.timeRemaining) /
         ((breakDuration * 60) / 100);
 
-  // console.log(
-  //   `${session.label} for focus ${focusDuration} break ${breakDuration} `
-  // );
-
-  // console.log(`progressWidth ${progressWidth} `);
   return (
     <div>
       {/* TODO: This area should show only when there is an active focus or break - i.e. the session is running or is paused */}
@@ -41,7 +36,7 @@ function ProgressSection({
               : secondsToDuration(session.timeRemaining)}{" "}
             remaining
           </p>
-          {!isTimerRunning && showLabel ? <h2>PAUSED</h2> : null}
+          {!TimerRunning && showLabel ? <h2>PAUSED</h2> : null}
         </div>
       </div>
       <div className="row mb-2">
